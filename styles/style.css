@@ -1,109 +1,123 @@
-:root {
-    --light-text: #8E847E;
-    --red: red;
-    --text-white: white;
+@layer init, reset, main;
+
+@import url(../node_modules/normalize.css/normalize.css) layer(reset);
+
+@layer init {
+    :root {
+        --primary: #ff0000;
+        --secondary: #888888;
+        --tertiary: #ffffff;
+        --quaternary: #ff4c00;
+    }
 }
 
+@layer main {
+    .container {
+        display: grid;
+        margin-top: 5em;
+        grid-template-columns: repeat(3, 300px);
+        grid-auto-rows: auto auto;
+        gap: 1em;
+        justify-content: center;
+    }
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 300px);
-    grid-auto-rows: auto auto;
-    gap: 1em;
-    justify-content: center;
-}
+    .card {
+        border: 0;
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 2;
+    }
 
-.card {
-    border: 0;
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-    display: grid;
-    grid-template-rows: subgrid;
-    grid-row: span 2;
-}
+    .heart-btn {
+        position: absolute;
+        top: 0.5em;
+        right: 0.0001em;
+        background: var(--tertiary);
+        padding: 0.3em 0.3em;
+        border: none;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
 
-.heart-btn {
-    position: absolute;
-    top: 0.5em;
-    right: 0.01em;
-    background: white;
-    padding: 0.2em 0.5em;
-    border: none;
-    font-size: 1.5em;
-    cursor: pointer;
-}
+    .heart-btn:hover {
+        background-color: var(--quaternary);
+    }
+    
 
-.badge {
-    position: absolute;
-    top: 25em;
-    background: var(--red);
-    color: var(--text-white);
-    padding: 0.2em 0.5em;
-    font-weight: bold;
-}
+    .badge {
+        position: absolute;
+        top: 25em;
+        background: var(--primary);
+        color: var(--tertiary);
+        padding: 0.2em 0.5em;
+        font-weight: bold;
+    }
 
-.card-image {
-    height: 450px;
-    position: relative;
-}
+    .card-image {
+        height: 450px;
+        position: relative;
+    }
 
-.card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-.card-text {
-    padding: 1em 0.5em;
-    display: grid;
-    align-content: space-evenly;
-}
+    .card-text {
+        padding: 1em 0.5em;
+        display: grid;
+        align-content: space-evenly;
+    }
 
-.sponsored {
-    font-size: 0.9em;
-    font-weight: lighter;
-    color: var(--light-text);
-}
+    .sponsored {
+        font-size: 0.9em;
+        font-weight: lighter;
+        color: var(--secondary);
+    }
 
-.brand {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 0.5em 0;
-}
+    .brand {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 0.5em 0;
+    }
 
-.product-name {
-    margin-top: -0.3em;
-    margin-bottom: 0.5em;
-}
+    .product-name {
+        margin-top: -0.3em;
+        margin-bottom: 0.5em;
+    }
 
-.price-info {
-    color: var(--light-text);
-    margin: 0.3em 0;
-    font-size: 0.85em;
-}
+    .price-info {
+        color: var(--secondary);
+        margin: 0.3em 0;
+        font-size: 0.85em;
+    }
 
-.strike {
-    text-decoration: line-through;
-}
+    .strike {
+        text-decoration: line-through;
+    }
 
-.discount {
-    color: var(--red);
-    margin-left: 0.2em;
-}
+    .discount {
+        color: var(--primary);
+        margin-left: 0.2em;
+    }
 
-.price {
-    display: flex;
-    flex-direction: column;
-    margin-top: auto;
-}
+    .price {
+        display: flex;
+        flex-direction: column;
+        margin-top: auto;
+    }
 
-.price-current {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 0;
-}
+    .price-current {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 0;
+    }
 
-.price-red {
-    color: var(--red);
+    .price-red {
+        color: var(--primary);
+    }
 }
