@@ -18,10 +18,8 @@
 
     .container {
         display: grid;
-        margin-top: 5em;
-        margin-left: 19.57vw;
-        grid-template-columns: repeat(auto-fill, 300px);
-        grid-auto-rows: auto auto;
+        grid-template-columns: repeat(auto-fit, 300px);
+        grid-template-rows: repeat(7, auto);
         gap: 1em;
         justify-content: center;
     }
@@ -54,11 +52,13 @@
 
     .badge {
         position: absolute;
-        top: 25em;
+        top: 32em;
+        left: -0.20em;
         background: var(--primary);
         color: var(--tertiary);
         padding: 0.2em 0.5em;
         font-weight: bold;
+        font-size: small;
     }
 
     .card-image {
@@ -70,12 +70,6 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-    }
-
-    .card-text {
-        padding: 1em 0.5em;
-        margin-top: -2em;
-        align-content: space-between;
     }
 
     .sponsored {
@@ -108,12 +102,6 @@
     .discount {
         color: var(--primary);
         margin-left: 0.2em;
-    }
-
-    .price {
-        display: flex;
-        flex-direction: column;
-        margin-top: auto;
     }
 
     .price-current {
