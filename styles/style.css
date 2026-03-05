@@ -46,7 +46,8 @@
         cursor: pointer;
     }
 
-    .heart-btn:hover {
+    .heart-icon:hover {
+        fill: var(--quaternary);
         color: var(--quaternary);
     }
     
@@ -77,6 +78,12 @@
         font-size: 0.9em;
         font-weight: lighter;
         color: var(--secondary);
+    }
+
+    .info-icon {
+        font-size: 0.5em;
+        margin-bottom: -0.27em;
+        margin-left: -0.27em;
     }
 
     .brand {
