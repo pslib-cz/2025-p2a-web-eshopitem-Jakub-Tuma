@@ -1,0 +1,131 @@
+@layer init, reset, main;
+
+@import url(../node_modules/normalize.css/normalize.css) layer(reset);
+
+@layer init {
+    :root {
+        --primary: #ff0000;
+        --secondary: #888888;
+        --tertiary: #ffffff;
+        --quaternary: #ff4c00;
+    }
+}
+
+@layer main {
+    p, a, span, h3 {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 300px);
+        grid-template-rows: 450px auto auto auto;
+        gap: 1em;
+        justify-content: center;
+        margin-top: 0.5em;
+    }
+
+    .card {
+        border: 0;
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 4;
+    }
+
+    .heart-btn {
+        position: absolute;
+        top: 0.5em;
+        right: 0;
+        background: var(--tertiary);
+        padding: 0.1em 0.3em 0.05em 0.3em;
+        border: none;
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+    .heart-icon:hover {
+        fill: var(--quaternary);
+        color: var(--quaternary);
+    }
+    
+
+    .badge {
+        position: absolute;
+        top: 32em;
+        left: -0.20em;
+        background: var(--primary);
+        color: var(--tertiary);
+        padding: 0.2em 0.5em;
+        font-weight: bold;
+        font-size: small;
+    }
+
+    .card-image {
+        height: 450px;
+        position: relative;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .sponsored {
+        font-size: 0.9em;
+        font-weight: lighter;
+        color: var(--secondary);
+    }
+
+    .info-icon {
+        font-size: 0.5em;
+        margin-bottom: -0.27em;
+        margin-left: -0.27em;
+    }
+
+    .name {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .brand {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 0.5em 0;
+    }
+
+    .product-name {
+        display: flex;
+        flex-direction: column;
+        margin-top: -0.3em;
+        margin-bottom: 0.5em;
+    }
+
+    .price-info {
+        color: var(--secondary);
+        margin: 0.3em 0;
+        font-size: 0.85em;
+    }
+
+    .strike {
+        text-decoration: line-through;
+    }
+
+    .discount {
+        color: var(--primary);
+        margin-left: 0.2em;
+    }
+
+    .price-current {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .price-red {
+        color: var(--primary);
+    }
+}
